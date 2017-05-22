@@ -1,0 +1,106 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  font-family: $defaultFont, sans-serif;
+  font-size: $defaultFontSize;
+  font-weight: $defaultFontWeight;
+  line-height: $defaultLineHeight;
+
+  background-color: $white;
+  color: $insignia;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $insignia;
+  outline: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: lighten($insignia, 10%);
+    text-decoration: none;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: 0;
+}
+
+input,
+textarea {
+  border: 1px solid $xxxlightGrey;
+  border-radius: $inputBorderRadius;
+  padding: 0.5rem 0 0.5rem 0.8rem;
+
+  &::-ms-input-placeholder,
+  &:-ms-input-placeholder {
+    color: $lightGrey;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+// This hides native dropdown button arrow in IE
+select::-ms-expand {
+  display: none;
+}
+
+// This hides focus around selected option in FF
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 $black;
+}
+
+iframe {
+  border: 0;
+  width: 100%;
+  min-height: 80vh;
+
+  body {
+    margin: 0;
+  }
+}
+
+.navbar {
+  height: 8rem;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  transition: background-color 0.2s ease-in-out;
+  outline: none;
+}
+
+blockquote {
+  border: 0;
+}
