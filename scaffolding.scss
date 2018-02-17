@@ -39,9 +39,33 @@ body {
   font-weight: normal;
   line-height: 1.618;
 
-  background-color: #000000;
+  background-color: #FFFFFF;
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 0.8rem;
 }
 
 a {
@@ -95,7 +119,7 @@ select {
 
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 #FFFFFF;
+    text-shadow: 0 0 0 #000000;
   }
 }
 
@@ -198,12 +222,10 @@ sub {
   bottom: -0.25em;
 }
 
-
 // Remove border when inside `a` element in IE 8/9/10.
 img {
   border: 0;
 }
-
 
 // Correct overflow not hidden in IE 9/10/11.
 svg {
