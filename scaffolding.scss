@@ -1,4 +1,5 @@
-/* Reset */
+//sass-lint:disable single-line-per-selector, no-vendor-prefixes, no-color-literals
+// Reset
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,8 +22,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 * {
   box-sizing: inherit;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     box-sizing: inherit;
   }
 }
@@ -33,15 +34,14 @@ html {
 }
 
 body {
-  font-family: $defaultFont, sans-serif;
-  font-size: $defaultFontSize;
-  font-weight: $defaultFontWeight;
-  line-height: $defaultLineHeight;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.618;
 
-  background-color: $white;
+  background-color: #000000;
   margin: 0;
   padding: 0;
-  text-size-adjust: 100%;
 }
 
 a {
@@ -72,14 +72,14 @@ textarea {
 
 input,
 textarea {
-  border: 1px solid $xxxlightGrey;
-  border-radius: $inputBorderRadius;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
   padding: 0.5rem 0 0.5rem 0.8rem;
   line-height: normal;
 
   &::-ms-input-placeholder,
   &:-ms-input-placeholder {
-    color: $lightGrey;
+    color: #555555;
   }
 }
 
@@ -87,15 +87,16 @@ figure {
   margin: 0;
 }
 
-// This hides native dropdown button arrow in IE
-select::-ms-expand {
-  display: none;
-}
+// This hides focus around selected option in FF and native dropdown button arrow in IE
+select {
+  &::-ms-expand {
+    display: none;
+  }
 
-// This hides focus around selected option in FF
-select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 $black;
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #FFFFFF;
+  }
 }
 
 iframe {
@@ -124,13 +125,7 @@ blockquote {
   border: 0;
 }
 
-/**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
- * and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
-
+// Correct `block` display not defined for any HTML5 element in IE
 article,
 aside,
 details,
@@ -147,67 +142,46 @@ summary {
   display: block;
 }
 
-/**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
-
+// Correct `inline-block` display not defined in IE 8/9.
 audio,
 canvas,
 progress,
 video {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
+  display: inline-block;
+  vertical-align: baseline;
 }
 
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
+// Prevent modern browsers from displaying `audio` without controls.
+audio {
+  &:not([controls]) {
+    display: none;
+    height: 0;
+  }
 }
 
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
- */
-
+// Address `[hidden]` styling not present in IE 8/9/10.
 [hidden],
 template {
   display: none;
 }
 
-/**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
-
+// Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
 b,
 strong {
   font-weight: bold;
 }
 
-/**
- * Address styling not present in Safari and Chrome.
- */
-
+// Address styling not present in Safari and Chrome.
 dfn {
   font-style: italic;
 }
-/**
- * Address inconsistent and variable font size in all browsers.
- */
 
+// Address inconsistent and variable font size in all browsers.
 small {
   font-size: 80%;
 }
 
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-
+// Prevent `sub` and `sup` affecting `line-height` in all browsers.
 sub,
 sup {
   font-size: 75%;
@@ -224,32 +198,27 @@ sub {
   bottom: -0.25em;
 }
 
-/**
- * Remove border when inside `a` element in IE 8/9/10.
- */
 
+// Remove border when inside `a` element in IE 8/9/10.
 img {
   border: 0;
 }
 
-/**
- * Correct overflow not hidden in IE 9/10/11.
- */
 
-svg:not(:root) {
-  overflow: hidden;
+// Correct overflow not hidden in IE 9/10/11.
+svg {
+  &:not(:root) {
+    overflow: hidden;
+  }
 }
 
-/**
- * Remove most spacing between table cells.
- */
-
+// Remove most spacing between table cells.
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
 
-td,
-th {
-  padding: 0;
+  td,
+  th {
+    padding: 0;
+  }
 }
